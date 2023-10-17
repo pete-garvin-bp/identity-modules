@@ -31,8 +31,12 @@ module.exports = {
     }
   },
   plugins: [
+    
     new webpack.ProvidePlugin({
       process: 'process/browser.js',
+    }),
+    new webpack.DefinePlugin({
+        'process.env.NODE_DEBUG': JSON.stringify(''),
     }),
   ],
   module: {
