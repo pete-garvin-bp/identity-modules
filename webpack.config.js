@@ -33,7 +33,7 @@ module.exports = {
   plugins: [
     
     new webpack.ProvidePlugin({
-      process: 'process/browser.js',
+        process: path.resolve(__dirname, 'node_modules/process/browser.js'),
     }),
     new webpack.DefinePlugin({
         'process.env.NODE_DEBUG': JSON.stringify(''),
