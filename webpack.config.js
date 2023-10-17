@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 const path = require('path');
 
 module.exports = {
@@ -28,6 +30,11 @@ module.exports = {
       "http": require.resolve("stream-http")
     }
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser.js',
+    }),
+  ],
   module: {
     rules: [
       {
